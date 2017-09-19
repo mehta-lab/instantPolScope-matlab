@@ -1,0 +1,15 @@
+License: CC BY 4.0
+Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/).
+
+Citation: 
+This software was written to enable calibration of instantaneous fluorescence polscope and analysis of data acquired with it. The method and its applications are described in the following article:
+Mehta, Shalin B.,et al. ‘Dissection of Molecular Assembly Dynamics by Tracking Orientation and Position of Single Molecules in Live Cells.’ Proceedings of the National Academy of Sciences 113, no. 42 (October 18, 2016): E6352–61. doi:10.1073/pnas.1607674113.
+
+Author and Copyright:
+Shalin Mehta, http://www.mshalin.com
+
+Thanks: 
+Following MATLAB code authored by others is used in software. Some of the files from following code have been edited to work with Instantaneous fluorescence polscope.
+- u-track  for particle detection (http://lccb.hms.harvard.edu/software.html) by Khuloud Jaqaman.
+- Rosin threshold implemented by Sebastien Besson (http://lccb.hms.harvard.edu/people.html) 
+- PropertyGrid (http://www.mathworks.com/matlabcentral/fileexchange/28732-property-grid-using-jide-implementation) and GUI layout toolbox (http://www.mathworks.com/matlabcentral/fileexchange/27758-gui-layout-toolbox) to layout the GUI.

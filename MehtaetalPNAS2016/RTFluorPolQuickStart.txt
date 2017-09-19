@@ -1,0 +1,33 @@
+Quick start guide:
+
+Current state of the calibration is displayed as a property grid titled "RTFluorPol Settings" on the left. Following analysis sequence is perhaps a good start. However, each analysis task can be executed in arbitrary order. After each step, appropriate parameters are updated in RTFluorPol Settings. The field before colon is the tab in GUI where the function can be found.
+- Data: Select the folder in which raw data and calibration data are kept. Select colormap for images. 
+- RTFluorPol Settings: Set the microscope parameters and the identity and ROI of quadrants.
+- Quick check: Using a test sample, check if the settings chosen above are as intended. Tangential polarizer works well.
+- Registration: Using a test sample, obtain parameters that register I45, I90, I135 to I0. Image of sub-resolution beads or another isotropic test object works well.
+- Normalization: Using an image of isotropic test object (e.g., dye-solution, transmission image without any specimen), obtain parameters to normalize the polarization-independent light throughput of four quadrants. Adjust normalization factors of I45, I90, I135 so that the average intensity matches average intensity of I0.
+- Pol-calibration: Using an image of a tangential polarizer, compute pol-calibration (mapping of intensity imbalance among I0, I45, I90, and I135 to anisotropy).
+- Particle analysis: Detect particles in the average fluorescence channel*. Each particle's orientation is measured with high SNR by analyzing the intensities of polarization channels around the detected position.  
+- Data: allows you to import or export calibration.
+- Data: allows you to batch analyze multiple time-series.
+
+
+The raw, calibration, and processed data should be organized in the following heirarchy to ensure smooth operation of the code. 
+
+DataFolder: Top folder (date, person, purpose).
+  |-------raw images (time-series and calibration samples)
+  |-------PolStacks processed by MATLAB
+  |-------Data exported from OpenPolScope software.
+  |
+  |-------Calib: Calibration folder
+  |           |-----Calibration for MATLAB program in .mat format
+  |           |-----Calibration for ImageJ/Fiji/Micro-Manager for use during acquisition. Stored as multiple small .txt files. 
+  |
+  |-------ParticleDetection: folder for particle analysis
+                |---------- Results of detection.
+                |---------- Visualization of particles.
+                |---------- Statistical plots.
+
+* Particle detection is done using Gaussian mixture model fitting algorithm implemented in u-track package developed by Khuloud Jaqaman. Please see license for details.
+
+Version: 26-Jan-2014.	  
