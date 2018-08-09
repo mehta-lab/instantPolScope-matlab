@@ -39,7 +39,7 @@ I90=squeeze(polstack(:,:,6,:));
 I45=squeeze(polstack(:,:,7,:));
 
 
-if(isnan(polParams.Parent))
+if(~ishandle(polParams.Parent))
 % Compare the results before and after calibration.
     hTanPol=togglefig(['Calibration of polarization properties using ' polParams.polType ' polarizer'],1); 
     maximizefig(hTanPol);

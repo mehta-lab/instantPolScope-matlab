@@ -89,7 +89,7 @@ switch(normParams.normMethod)
 %                 I135,params.PixSize,freqcut,1);
 %           I find that the equalization factor across the field of view is quite similar.
 
-    if(isnan(normParams.Parent))
+    if(~ishandle(normParams.Parent))
         hnorm=togglefig('Before and after normalization',1); 
         maximizefig(hnorm);
         set(hnorm,'color','white','defaultaxesfontsize',15); colormap gray;
@@ -177,7 +177,7 @@ end
 
       
 if(normParams.diagnosis && ~strcmpi(normParams.normMethod,'manual'))
-    if(isnan(normParams.Parent))
+    if(~ishandle(normParams.Parent))
         hnorm=togglefig('Before and after normalization',1); 
         maximizefig(hnorm);
         set(hnorm,'color','white','defaultaxesfontsize',15); colormap gray;
