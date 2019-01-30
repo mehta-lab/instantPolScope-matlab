@@ -177,17 +177,22 @@ for frameno=arg.frameRange
     hold off;
        if(arg.exportMovie && ishandle(arg.hAxisIntensity))
         pause(arg.delay); % Delay so that figure is updated.
-
-        frameOrient=frame2im(getframe(hAxisOverlay)); %getframe is better than screencapture, because it updates the figures before capture.
-        frameIntensity=frame2im(getframe(arg.hAxisIntensity));
+        axes(hAxisOverlay);
+        frameOrient=frame2im(getframe(gca)); %getframe is better than screencapture, because it updates the figures before capture.
+        
+        axes(arg.hAxisIntensity);
+        frameIntensity=frame2im(getframe(gca));
+        
         frameOrient=uint8(imresize(frameOrient,[600 NaN]));
         frameIntensity=uint8(imresize(frameIntensity,[600 NaN]));
         movOrient(:,:,:,frameno)=cat(2,frameIntensity,frameOrient);
             %thisframe=frame2im(getframe(hfigOrient));
        elseif(arg.exportMovie)
-        frameOrient=frame2im(getframe(hAxisOverlay)); %getframe is better than screencapture, because it updates the figures before capture.
-        frameOrient=uint8(imresize(frameOrient,[600 NaN]));
-        movOrient(:,:,:,frameno)=frameOrient;           
+         axes(hAxisOverlay);
+         frameOrient=frame2im(getframe(gca)); %getframe is better than screencapture, because it updates the figures before capture.
+           
+         frameOrient=uint8(imresize(frameOrient,[600 NaN]));
+         movOrient(:,:,:,frameno)=frameOrient;           
        end
 end
    

@@ -21,7 +21,7 @@ cameragain=104;
 psfSigma=1.5;
 
 % List data
-topdir='/Users/shalin.mehta/Documents/images/MehtaetalPNAS2016FactinRetrograde/';
+topdir='/home/shalin/Documents/images_fry2/MehtaetalPNAS2016FactinRetrograde/';
 outputdir=[topdir 'analysis/'];
 mkdir(outputdir);
 

@@ -30,4 +30,4 @@ DataFolder: Top folder (date, person, purpose).
 
 * Particle detection is done using Gaussian mixture model fitting algorithm implemented in u-track package developed by Khuloud Jaqaman. Please see license for details.
 
-Version: 26-Jan-2014.	  
+Version: 30-Jan-2018.	  
