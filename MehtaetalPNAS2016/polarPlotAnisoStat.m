@@ -9,6 +9,7 @@ args.Statistic='PixelAnisotropy';
 args.showMeanOrient=true;
 args.anisoCeiling=NaN; % The radial range is constrained to either anisoCeiling or avgCeiling depending on the type of histogram.
 args.LineWidth=2;
+args.exportPath='';
 args=parsepropval(args,varargin{:});
 
 if(any(size(aniso)~= size(orient)) || any(size(avg)~=size(orient) ))
@@ -165,6 +166,9 @@ end
 % polar(optargs.Parent,histEdges,rho,'k-');
 % 
 
+if(~isempty(args.exportPath)) % write a CSV file with intensity, anisotropy, orientation as columns.
+    csvwrite(args.exportPath,[avg aniso orient]);
+end
 
 end
 

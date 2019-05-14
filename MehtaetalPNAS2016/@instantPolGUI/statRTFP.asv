@@ -112,7 +112,7 @@ if(statParams.EnsembleOrientationRelativeToROI)
 end
 % Export results.
 
-save(statParams.ExportToFile,'filepath','startframe','endframe','roiLabels','numROI','I0Ensemble','I45Ensemble','I90Ensemble','I135Ensemble','OrientEnsemble','AnisoEnsemble','AvgEnsemble','OrientROI');
+save(statParams.ExportToFile,'filepath','startframe','endframe','roiLabels','numROI','I0Ensemble','I45Ensemble','I90Ensemble','I135Ensemble','OrientEnsemble','AnisoEnsemble','AvgEnsemble','OrientROI',);
 
 % % Display results if asked for.
 % if(statParams.displayStatistics)
@@ -168,7 +168,8 @@ if(statParams.ExportMovieofROIAndHistogram)
         
         h(2)=subplot(1,2,2,'Parent',me.hStat.panelImgs);
         polarPlotAnisoStat(aniso(mask),orient(mask),avg(mask),'Nbins',36,'PlotType','Polar','ReferenceOrient',maskOrient,...
-        'Statistic','PixelOrientation','orientationRelativeToROI',statParams.EnsembleOrientationRelativeToROI,'exportPath',[exportpath filesep exportname '_frame' int2str(idF) '.csv']);
+        'Statistic','PixelOrientation','orientationRelativeToROI',statParams.EnsembleOrientationRelativeToROI,'exportPath',[exportpath exportname '_frame
+ );
         title('Orientation (blue: mask orientation, red: ensemble orientation)');
         
         drawnow; pause(0.001);
